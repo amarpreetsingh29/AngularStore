@@ -1,0 +1,2 @@
+# AngularStore
+Prototype for eCart.
