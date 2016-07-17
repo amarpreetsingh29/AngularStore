@@ -1,0 +1,116 @@
+<body>
+    <div class="container">
+       
+        <div class="row blue"  >
+            <div class="col-sm-12">
+                <p>
+                    Thanks for shopping at Angular store.
+                </p>
+                <p>
+                    This is your shopping cart.Here you can edit the items, go back to the store, clear the store or check out.
+                </p>
+            </div>        
+        </div>
+        <div class="row" id="productsDiv" >
+            <div class="col-sm-9">
+
+                <table class="table table-bordered tbl-main" ng-show="c.cart.items.length">
+                    <tr style="background-color:lightgray">
+                        <td class="col-sm-2">
+                            Item
+                        </td>
+                        <td class="col-sm-7">
+                            Quantity
+                        </td>
+                        <td class="col-sm-2">
+                            Price
+                        </td>
+                        <td class="col-sm-1"></td>
+                    </tr>
+                    <tr ng-repeat="item in c.cart.items">
+                        <td>{{item.name}}</td>                      
+                        <td>
+                            <div class="input-group" style="text-align:center;width:125px"  >
+                                <input type="number" ng-model="item.quantity" class="form-control input-sm"  />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-success" ng-click="c.incQty(item)">
+                                        <span class="glyphicon glyphicon-plus-sign"></span>
+                                    </button>
+                                </span>
+                                
+                                <span class="input-group-btn">
+                                    <button class="btn " ng-click="c.decQty(item)">
+                                        <span class="glyphicon glyphicon-minus-sign"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </td>
+
+                        <td>$ {{ item.quantity * item.price }} </td>
+                        <td><a ng-click="c.remove(item)"><span class="glyphicon glyphicon-remove-sign"></span></a></td>
+                    </tr>
+
+                    <tr style="background-color:lightgray">
+                        <td class="col-sm-2">
+                            Total
+                        </td>
+                        <td class="col-sm-7" >{{c.cart.totalQty}}</td>
+                        <td class="col-sm-2">${{c.cart.totalCost}}</td>
+                        <td class="col-sm-1"></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="col-sm-3">
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button class="btn btn-info" ng-click="c.back()">
+                            <span class="glyphicon glyphicon-arrow-left"></span> back to store
+                        </button>
+                    </div>
+                </div>
+
+                <div ng-show="c.cart.items.length">
+
+                    <div class="row">
+                        <div class="col-sm-12" ng-click="c.clearCart()">
+                            <button class="btn btn-danger">
+                                <span class="glyphicon glyphicon-remove"></span> Clear Cart
+                            </button>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button class="btn btn-info">
+                                <span class="glyphicon glyphicon-check"></span> check out using PayPal
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button class="btn btn-info">
+                                <span class="glyphicon glyphicon-check"></span> check out using Google
+                            </button>
+                        </div>
+                    </div>
+                </div>
+              
+
+
+
+            </div>
+
+
+        </div>
+</div>
+
+</body>
+
