@@ -1,2 +1,2 @@
 # AngularStore
-Prototype for eCart.
+Prototype for eCart bult with AngularJS and gulp.
