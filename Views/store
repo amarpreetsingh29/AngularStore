@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+  
+</head>
+<body >
+    <div class="container">
+         
+        <div class="row blue" >            
+            <div class="col-sm-12">
+                <p>
+                    Welcome to the angular store.
+                </p>
+                <p>
+                    Please select the products you want and add them to your shopping cart.
+                </p>
+                <p>
+                    When you are done, click the shopping cart icon to review your order and check out.
+                </p>
+            </div>
+           
+        </div>
+        <div class="row" id="searchDiv">
+            <div class="col-sm-12">
+                <p>
+                    Search <input type="text" id="txtSearch" class="input-sm" style="border-radius: 20px" ng-model="s.searchItem" />
+                </p>               
+            </div>
+         </div>
+
+        <div class="row" id="productsDiv">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div style="text-align:right" class="blue">
+                            <a ng-click="s.viewCart()"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                            {{s.cart.items.length}} items    &nbsp;
+                            ${{s.cart.totalCost}}
+                        </div>
+                    </div>
+                    <div class="panel-body main">
+                        <table class="table table-bordered tbl-main">
+                            <tr ng-repeat="item in s.collection|filter:{name:s.searchItem}">
+                                <td style="text-align:center"><img class="img" src="icons/{{item.name}}.png" /></td>
+                                <td>
+                                    <p class="blue"><a ng-click="s.productDetail(item.name)">{{item.name}}</a></p>
+                                    <p>{{item.description}}</p>
+                                </td>
+                                <td style="text-align:right">${{item.price}}.00</td>
+                                <td class="blue"><a ng-click="s.addToCart(item)">add to cart</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <div style="text-align:right" class="blue">
+                            <a ng-click="s.viewCart()"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                            {{s.cart.items.length}} items    &nbsp;
+                            ${{s.cart.totalCost}}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+          
+
+        </div>
+    </div>
+
+</body>
+</html>
