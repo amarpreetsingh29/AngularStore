@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Angular Store</title>
+    <meta name="viewport" content="width=device-width" />   
+    <link href="store.css" rel="stylesheet" />   
+</head>
+
+<body ng-app="myapp">
+    <div class="container" >
+        <div class="row page-header" style="background-color:lightgray">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-11">
+                <h1>Angular Store</h1>
+            </div>
+        </div>
+    </div>
+    <div id="views" style="display:none">
+        <ng-view></ng-view>
+    </div>   
+
+    <div id="loading"></div>  
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+    <script src="dist/all.js"></script>
+
+    
+</body>
+</html>
+
