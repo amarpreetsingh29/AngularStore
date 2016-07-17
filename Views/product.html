@@ -1,0 +1,100 @@
+
+    <div class="container">
+      
+        <div class="row blue"  id="productDescription">
+            <div class="col-sm-12">
+                <p>
+                    <img class="img" src="icons/{{p.item.name}}.png" /> {{p.item.name}}. {{p.item.description}}
+
+                </p>
+            </div>
+           
+            
+
+        </div>        
+        <div class="row" id="propertiesDiv">
+            <div class="col-sm-10">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div style="text-align:right" class="blue">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <a ng-click="p.viewCart()"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                                    {{p.cart.items.length}} items
+                                    ${{p.cart.totalCost}}
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                      
+                    </div>
+                    <div class="panel-body main">
+                        <table class="table table-bordered tbl-main ">
+                            <tr ng-repeat="item in p.item.properties">
+                                <td class="col-sm-2">{{item.name}}</td>
+                                <td class="col-sm-2">
+                                    {{item.value}}
+                                </td>
+                                <td class="col-sm-8"></td>                               
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <div style="text-align:right" class="blue">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <a ng-click="p.viewCart()"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                                    {{p.cart.items.length}} items
+                                    ${{p.cart.totalCost}}
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                   
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="col-sm-2">                
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button class="btn btn-success" ng-click="p.addToCart()">
+                            <span class="glyphicon glyphicon-shopping-cart"></span> add to cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="row" ng-show="p.status">
+                    <div class="col-sm-12">
+                        <button class="btn btn-danger" ng-click="p.remove()">
+                            <span class="glyphicon glyphicon-remove"></span> remove from cart
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button class="btn btn-info" ng-click="p.back()">
+                            <span class="glyphicon glyphicon-arrow-left"> </span>back to store
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>    
+        </div>
+    </div>
+
+
