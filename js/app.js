@@ -11,9 +11,9 @@ var a = function () {
 
     function configuration($routeProvider) {
         $routeProvider
-        .when('/store', { templateUrl: '/Views/store.html', controller: 'storeController', controllerAs: 's' })
-        .when('/product', { templateUrl: '/Views/product.html', controller: 'productController', controllerAs: 'p' })
-        .when('/cart', { templateUrl: '/Views/cart.html', controller: 'cartController', controllerAs: 'c' })
+        .when('/store', { templateUrl: 'Views/store.html', controller: 'storeController', controllerAs: 's' })
+        .when('/product', { templateUrl: 'Views/product.html', controller: 'productController', controllerAs: 'p' })
+        .when('/cart', { templateUrl: 'Views/cart.html', controller: 'cartController', controllerAs: 'c' })
         .otherwise({ redirectTo: '/store' });
 
     }
